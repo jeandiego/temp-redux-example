@@ -1,11 +1,14 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {useSelector} from 'react-redux';
 import {Button} from '../../components/Button';
 
 export function Details() {
+  const count = useSelector(state => state.counter.total);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>TEXTO A DEFINIR</Text>
+      <Text style={styles.title}>{count}</Text>
       <Button title="Limpar valores" />
     </View>
   );
